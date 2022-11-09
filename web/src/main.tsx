@@ -1,11 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Header from "./components/header"
-import Nav from "./components/nav"
+
+import GlobalStyle from "./style/globalStyle"
+import App from "./App"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Header />
-    <Nav />
+    <App />
+    <GlobalStyle />
   </React.StrictMode>
 )
