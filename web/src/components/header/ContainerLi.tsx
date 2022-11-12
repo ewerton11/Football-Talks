@@ -6,27 +6,34 @@ import {
   PreviewDivNav,
   ResultNav,
 } from "../../style/header/nav"
-import Flamengo from "../../assets/teams/Flamengo.png"
-import Fluminense from "../../assets/teams/Fluminense.png"
+import { useEffect, useState } from "react"
+import { api } from "../../lib/axios"
 
-const ContainerLi = () => {
+export function ContainerLi() {
+  useEffect(() => {
+    api.get("campeonatos/10/rodadas/36").then((Response) => {
+      //alterar a rodada dinamico importando rounds
+
+      const teamClashes = Response.data.partidas
+
+      setClashes(teamClashes)
+    })
+  }, [])
+
+  const [teamsAgainst, setClashes] = useState([])
+
   return (
-    <DivContainerNav>
-      <DivLiNav>
-        <LiNav>
-          Fluminense
-          <ImgTeamLiNav src={Fluminense} alt="Fluminense" />
-          <ResultNav>(0)</ResultNav>
-        </LiNav>
-        <LiNav>
-          Flamengo
-          <ImgTeamLiNav src={Flamengo} alt="Flamengo" />
-          <ResultNav>(0)</ResultNav>
-        </LiNav>
-      </DivLiNav>
-      <PreviewDivNav>video</PreviewDivNav>
-    </DivContainerNav>
+    <>
+      {teamsAgainst.map((teams) => {
+        return (
+          <DivContainerNav>
+            <DivLiNav>
+              <LiNav>{teams.time_mandante.nome_popular}</LiNav>
+              <LiNav>{teams.time_visitante.nome_popular}</LiNav>
+            </DivLiNav>
+          </DivContainerNav>
+        )
+      })}
+    </>
   )
 }
-
-export default ContainerLi

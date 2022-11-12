@@ -1,19 +1,15 @@
-import { useState } from "react"
-import axios from "axios"
+import { useEffect, useState } from "react"
+import { api } from "../../lib/axios"
 import { RoundNav } from "../../style/header/nav"
 
 export default function Rounds() {
-  function getTeams() {
-    axios("../../../dataGames.json")
-      .then((Response) => {
-        const data = Response.data
-        const rounds = data.items[0].round
+  useEffect(() => {
+    api.get("campeonatos/10").then((Response) => {
+      const dataRound = Response.data.rodada_atual.rodada
 
-        setRound(rounds.brasileirao)
-      })
-      .catch((erro) => console.log(erro))
-  }
-  getTeams()
+      setRound(dataRound)
+    })
+  }, [])
 
   const [brasileirao, setRound] = useState()
 
