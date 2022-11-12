@@ -1,5 +1,5 @@
 import { NavStyle, UlNav } from "../../style/header/nav"
-import ContainerLi from "./ContainerLi"
+import { ContainerLi } from "./ContainerLi"
 import Rounds from "./Rounds"
 
 export default function Nav() {
@@ -7,15 +7,6 @@ export default function Nav() {
     <NavStyle>
       <Rounds />
       <UlNav>
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
-        <ContainerLi />
         <ContainerLi />
       </UlNav>
     </NavStyle>
