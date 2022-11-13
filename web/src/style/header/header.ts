@@ -1,12 +1,11 @@
 import styled from "styled-components"
 
 export const HeaderStyle = styled.header`
-  z-index: 20;
+  z-index: 2;
   width: 100%;
   height: 7vh;
   background-color: white;
-  border-bottom: 1px solid black;
-  /* border-bottom: #00000023; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
   position: fixed;
   display: flex;
   justify-content: center;
