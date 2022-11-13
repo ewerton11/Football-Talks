@@ -12,11 +12,14 @@ import { api } from "../../lib/axios"
 interface Confrontation {
   time_mandante: {
     nome_popular: string
+    escudo: string
   }
   time_visitante: {
     nome_popular: string
+    escudo: string
   }
-  nome_popular: string
+  placar_mandante: number
+  placar_visitante: number
 }
 
 export function ContainerLi() {
@@ -38,8 +41,16 @@ export function ContainerLi() {
         return (
           <DivContainerNav>
             <DivLiNav>
-              <LiNav>{teams.time_mandante.nome_popular}</LiNav>
-              <LiNav>{teams.time_visitante.nome_popular}</LiNav>
+              <LiNav>
+                <ImgTeamLiNav src={teams.time_mandante.escudo} alt="" />
+                {teams.time_mandante.nome_popular}
+                <ResultNav>({teams.placar_mandante})</ResultNav>
+              </LiNav>
+              <LiNav>
+                <ImgTeamLiNav src={teams.time_visitante.escudo} />
+                {teams.time_visitante.nome_popular}
+                <ResultNav>({teams.placar_visitante})</ResultNav>
+              </LiNav>
             </DivLiNav>
           </DivContainerNav>
         )
