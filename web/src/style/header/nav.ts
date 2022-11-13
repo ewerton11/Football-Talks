@@ -1,9 +1,11 @@
 import styled from "styled-components"
 
 export const NavStyle = styled.nav`
+  z-index: 2;
   width: 20vw;
   height: 93vh;
   background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.18);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -17,6 +19,7 @@ export const RoundNav = styled.p`
   width: 100%;
   height: 5vh;
   background-color: white;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.18); */
   display: flex;
   justify-content: center;
   align-items: center;
