@@ -46,19 +46,22 @@ export const DivContainerNav = styled.div`
 
 export const DivLiNav = styled.div`
   width: 70%;
+  display: flex;
+  flex-direction: column;
 `
 
 export const LiNav = styled.li`
   width: 100%;
   height: 50%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   font-family: "Roboto", sans-serif;
 `
 
 export const ImgTeamLiNav = styled.img`
   width: 25px;
+  margin-left: 5px;
+  margin-right: 1vw;
 `
 
 export const PreviewDivNav = styled.div`
@@ -66,5 +69,6 @@ export const PreviewDivNav = styled.div`
 `
 
 export const ResultNav = styled.p`
+  margin-left: auto;
   color: rgb(79, 78, 78);
 `
