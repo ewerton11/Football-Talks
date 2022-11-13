@@ -9,6 +9,16 @@ import {
 import { useEffect, useState } from "react"
 import { api } from "../../lib/axios"
 
+interface Confrontation {
+  time_mandante: {
+    nome_popular: string
+  }
+  time_visitante: {
+    nome_popular: string
+  }
+  nome_popular: string
+}
+
 export function ContainerLi() {
   useEffect(() => {
     api.get("campeonatos/10/rodadas/36").then((Response) => {
@@ -24,7 +34,7 @@ export function ContainerLi() {
 
   return (
     <>
-      {teamsAgainst.map((teams) => {
+      {teamsAgainst.map((teams: Confrontation) => {
         return (
           <DivContainerNav>
             <DivLiNav>
