@@ -9,19 +9,6 @@ import {
 import { useEffect, useState } from "react"
 import { api } from "../../lib/axios"
 
-interface Confrontation {
-  time_mandante: {
-    nome_popular: string
-    escudo: string
-  }
-  time_visitante: {
-    nome_popular: string
-    escudo: string
-  }
-  placar_mandante: number
-  placar_visitante: number
-}
-
 export function ContainerLi() {
   useEffect(() => {
     api.get("campeonatos/10/rodadas/36").then((Response) => {
