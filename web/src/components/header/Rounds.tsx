@@ -5,7 +5,7 @@ import { RoundNav } from "../../style/header/nav"
 export default function Rounds() {
   useEffect(() => {
     api.get("campeonatos/10").then((Response) => {
-      const dataRound = Response.data.rodada_atual.rodada
+      const dataRound = Response.data.rodada_atual.nome
 
       setRound(dataRound)
     })
@@ -13,5 +13,5 @@ export default function Rounds() {
 
   const [brasileirao, setRound] = useState()
 
-  return <RoundNav>Rodada {brasileirao}</RoundNav>
+  return <RoundNav>{brasileirao}</RoundNav>
 }
