@@ -1,6 +1,8 @@
+import { Round } from "./style"
+
+import { api } from "../../../../../lib/axios/axios"
+
 import { useEffect, useState } from "react"
-import { api } from "../../lib/axios"
-import { RoundNav } from "../../style/header/nav"
 
 export default function Rounds() {
   useEffect(() => {
@@ -13,5 +15,5 @@ export default function Rounds() {
 
   const [brasileirao, setRound] = useState()
 
-  return <RoundNav>{brasileirao}</RoundNav>
+  return <Round>{brasileirao}</Round>
 }

@@ -3,11 +3,12 @@ import {
   DivLiNav,
   ImgTeamLiNav,
   LiNav,
-  PreviewDivNav,
   ResultNav,
-} from "../../style/header/nav"
+} from "./style"
+
+import { api } from "../../../../../lib/axios/axios"
+
 import { useEffect, useState } from "react"
-import { api } from "../../lib/axios"
 
 export function ContainerLi() {
   useEffect(() => {

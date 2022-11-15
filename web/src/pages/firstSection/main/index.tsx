@@ -1,5 +1,5 @@
-import { StyleMain } from "../style/main/main"
-import FirstSection from "./FirstSection"
+import FirstSection from "./section"
+import { StyleMain } from "./style"
 
 export default function Main() {
   return (

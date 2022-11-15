@@ -1,6 +1,7 @@
-import { NavStyle, UlNav } from "../../style/header/nav"
-import { ContainerLi } from "./ContainerLi"
-import Rounds from "./Rounds"
+import { NavStyle, UlNav } from "./style"
+
+import { ContainerLi } from "./liContainer/container"
+import Rounds from "./rounds"
 
 export default function Nav() {
   return (
