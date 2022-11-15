@@ -1,7 +1,7 @@
-import { HeaderStyle, LogoStyle } from "../../style/header/header"
-import Nav from "./Nav"
+import Nav from "./nav/container"
+import { HeaderStyle, LogoStyle } from "./style"
 
-const Header = () => {
+function Header() {
   return (
     <HeaderStyle>
       <LogoStyle>Ewt</LogoStyle>
