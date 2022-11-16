@@ -12,7 +12,7 @@ import { useEffect, useState } from "react"
 
 export function ContainerLi() {
   useEffect(() => {
-    api.get("campeonatos/10/rodadas/36").then((Response) => {
+    api.get("campeonatos/10/rodadas/38").then((Response) => {
       //alterar a rodada dinamico importando rounds
 
       const teamClashes = Response.data.partidas
