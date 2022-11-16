@@ -1,11 +1,11 @@
-import Main from "./pages/firstSection/main"
+import DivFirstSection from "./pages/firstSection"
 import Header from "./pages/home/header/container"
 
 export default function App() {
   return (
     <>
       <Header />
-      <Main />
+      <DivFirstSection />
     </>
   )
 }

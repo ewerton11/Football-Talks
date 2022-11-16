@@ -8,3 +8,7 @@ export const api = axios.create({
     authorization: `Bearer ${token}`,
   },
 })
+
+export const apiVideos = axios.create({
+  baseURL: "https://www.scorebat.com/video-api/v3/",
+})
