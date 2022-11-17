@@ -6,12 +6,22 @@ export const ContainerDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: scroll;
+  position: relative;
 `
 
 export const StyleDiv = styled.div`
-  z-index: 1;
   width: 500px;
   height: 300px;
-  /* background-color: black; */
+  display: flex;
+  overflow: auto;
 `
+
+/* ${div} {
+  position: absolute;
+} */
+/* > ${div} {
+  position: absolute;
+} */
+// div: nth - child(n) {
+//   position: absolute;
+// }
