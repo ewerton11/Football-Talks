@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { apiVideos } from "../../../../lib/axios/axios"
-import { ContainerDiv, StyleDiv } from "./style"
+import { ContainerDiv, Divvv, StyleDiv } from "./style"
 
 export default function FirstSection() {
   useEffect(() => {
@@ -15,13 +15,15 @@ export default function FirstSection() {
 
   const [teamsAgainst, setClashes] = useState([])
 
-  // teamsAgainst.map((item) => console.log(item.videos[0].embed))
-
   return (
     <ContainerDiv>
-      {teamsAgainst.map((videos) => {
-        return <StyleDiv>{videos.videos[0].embed}</StyleDiv>
-      })}
+      <StyleDiv
+        dangerouslySetInnerHTML={{
+          __html: teamsAgainst
+            .filter((item) => item.competition === "BRASIL: Serie A")
+            .map((item) => item.videos[0].embed),
+        }}
+      ></StyleDiv>
     </ContainerDiv>
   )
 }
