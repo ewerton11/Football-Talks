@@ -13,6 +13,9 @@ import ArrowRight from "../../../../assets/arrowRight.svg"
 
 interface SerieA {
   competition: string
+  teamsVideos: {
+    videos: string[]
+  }
 }
 
 export default function FirstSection() {
@@ -33,15 +36,36 @@ export default function FirstSection() {
 
   const [teamsVideos, setVideos] = useState([])
 
-  const [index, setIndex] = useState(0)
+  let [index, setIndex] = useState(0)
+
+  function swipeRight() {
+    // indexValue
+
+    if (index !== teamsVideos.length - 1) {
+      setIndex(index + 1)
+    } else {
+      index = -1
+      setIndex(index + 1)
+    }
+  }
 
   function swipeLeft() {
     // indexValue
 
-    setIndex(index + 1)
+    if (index <= 0) {
+      setIndex((index = teamsVideos.length - 1))
+    } else {
+      setIndex(index - 1)
+    }
   }
 
-  let gamesRounds = teamsVideos[index].videos[0].embed
+  // console.log(teamsVideos.length)
+
+  let gamesRounds
+
+  if (teamsVideos[index]) {
+    gamesRounds = teamsVideos[index].videos[0].embed
+  }
 
   return (
     <ContainerDiv>
@@ -52,7 +76,7 @@ export default function FirstSection() {
       />
       {/* <StyleDivLeft
         dangerouslySetInnerHTML={{
-          __html: zero,
+          __html: "",
         }}
       ></StyleDivLeft> */}
       <StyleDiv
@@ -66,7 +90,11 @@ export default function FirstSection() {
         }}
       ></StyleDivRigth> */}
 
-      <ArrowRightStyle src={ArrowRight} alt="seta para direita" />
+      <ArrowRightStyle
+        src={ArrowRight}
+        alt="seta para direita"
+        onClick={swipeRight}
+      />
     </ContainerDiv>
   )
 }
