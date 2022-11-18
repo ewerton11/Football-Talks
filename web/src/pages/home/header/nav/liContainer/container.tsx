@@ -27,7 +27,7 @@ export function ContainerLi() {
     <>
       {teamsAgainst.map((teams: Confrontation) => {
         return (
-          <DivContainerNav>
+          <DivContainerNav key={Math.random()}>
             <DivLiNav>
               <LiNav>
                 <ImgTeamLiNav src={teams.time_mandante.escudo} alt="" />
