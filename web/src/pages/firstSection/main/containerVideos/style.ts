@@ -11,7 +11,7 @@ export const ContainerDiv = styled.div`
 
   & div:nth-child(2) {
     width: 500px;
-    height: 250px;
+    height: 300px;
     position: absolute;
     top: 50%;
     left: 10%;
@@ -27,10 +27,10 @@ export const ContainerDiv = styled.div`
     z-index: 2;
     width: 500px;
     height: 300px;
-    border: 5px solid black;
+    border: 2px solid black;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 
     & div {
       min-width: 100% !important;
@@ -40,10 +40,10 @@ export const ContainerDiv = styled.div`
 
   & div:nth-child(4) {
     width: 500px;
-    height: 250px;
+    height: 230px;
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 15%;
     transform: translateY(-50%);
 
     & div {
@@ -54,12 +54,8 @@ export const ContainerDiv = styled.div`
 `
 
 export const Div = styled.div`
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  width: 550px;
+  height: 400px;
 `
 
 export const ArrowLeftStyle = styled.img`

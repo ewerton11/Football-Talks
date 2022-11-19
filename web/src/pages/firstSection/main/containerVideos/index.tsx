@@ -1,22 +1,16 @@
 import { useEffect, useState } from "react"
 import { apiVideos } from "../../../../lib/axios/axios"
-import {
-  ArrowLeftStyle,
-  ArrowRightStyle,
-  ContainerDiv,
-  Div,
-  StyleDiv,
-  StyleDivLeft,
-  StyleDivRigth,
-} from "./style"
+import { ArrowLeftStyle, ArrowRightStyle, ContainerDiv, Div } from "./style"
 import ArrowLeft from "../../../../assets/arrowLeft.svg"
 import ArrowRight from "../../../../assets/arrowRight.svg"
 
 interface SerieA {
   competition: string
-  teamsVideos: {
-    videos: string[]
-  }
+}
+
+interface Video {
+  videos: object[]
+  embed: string
 }
 
 export default function FirstSection() {
@@ -35,11 +29,21 @@ export default function FirstSection() {
 
   const [teamsVideos, setVideos] = useState([])
 
-  function swipeLeft() {}
+  function swipeLeft() {
+    if (indixZero === 0) {
+      setValueUno((indixZero = 0))
+      setValueTwo((indexThree = 1))
+    }
+  }
 
   function swipeRight() {
-    setValueUno(indixZero + 1)
-    setValueTwo(indexThree + 1)
+    if (indexThree <= 1) {
+      setValueUno((indixZero = 0))
+      setValueTwo((indexThree = 3))
+    } else if (indexThree <= teamsVideos.length) {
+      setValueUno(indixZero + 1)
+      setValueTwo(indexThree + 1)
+    }
   }
 
   let [indixZero, setValueUno] = useState(0)
@@ -55,10 +59,10 @@ export default function FirstSection() {
         onClick={swipeLeft}
       />
 
-      {threeItems.map((items) => {
+      {threeItems.map((items: Video) => {
         return (
           <Div
-            key={1}
+            key={Math.random()}
             dangerouslySetInnerHTML={{
               __html: items.videos[0].embed,
             }}
