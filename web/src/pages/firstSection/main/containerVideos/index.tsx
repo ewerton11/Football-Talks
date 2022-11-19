@@ -4,6 +4,7 @@ import {
   ArrowLeftStyle,
   ArrowRightStyle,
   ContainerDiv,
+  Div,
   StyleDiv,
   StyleDivLeft,
   StyleDivRigth,
@@ -28,44 +29,23 @@ export default function FirstSection() {
         (ligue: SerieA) => ligue.competition === "BRASIL: Serie A"
       )
 
-      // console.log(serieA.length)
-
       setVideos(serieA)
     })
   }, [])
 
   const [teamsVideos, setVideos] = useState([])
 
-  let [index, setIndex] = useState(0)
+  function swipeLeft() {}
 
   function swipeRight() {
-    // indexValue
-
-    if (index !== teamsVideos.length - 1) {
-      setIndex(index + 1)
-    } else {
-      index = -1
-      setIndex(index + 1)
-    }
+    setValueUno(indixZero + 1)
+    setValueTwo(indexThree + 1)
   }
 
-  function swipeLeft() {
-    // indexValue
+  let [indixZero, setValueUno] = useState(0)
+  let [indexThree, setValueTwo] = useState(3)
 
-    if (index <= 0) {
-      setIndex((index = teamsVideos.length - 1))
-    } else {
-      setIndex(index - 1)
-    }
-  }
-
-  // console.log(teamsVideos.length)
-
-  let gamesRounds
-
-  if (teamsVideos[index]) {
-    gamesRounds = teamsVideos[index].videos[0].embed
-  }
+  let threeItems = teamsVideos.slice(indixZero, indexThree)
 
   return (
     <ContainerDiv>
@@ -74,21 +54,17 @@ export default function FirstSection() {
         alt="seta para esquerda"
         onClick={swipeLeft}
       />
-      {/* <StyleDivLeft
-        dangerouslySetInnerHTML={{
-          __html: "",
-        }}
-      ></StyleDivLeft> */}
-      <StyleDiv
-        dangerouslySetInnerHTML={{
-          __html: gamesRounds,
-        }}
-      ></StyleDiv>
-      {/* <StyleDivRigth
-        dangerouslySetInnerHTML={{
-          __html: dois,
-        }}
-      ></StyleDivRigth> */}
+
+      {threeItems.map((items) => {
+        return (
+          <Div
+            key={1}
+            dangerouslySetInnerHTML={{
+              __html: items.videos[0].embed,
+            }}
+          ></Div>
+        )
+      })}
 
       <ArrowRightStyle
         src={ArrowRight}

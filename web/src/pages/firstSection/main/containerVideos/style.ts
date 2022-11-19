@@ -8,6 +8,58 @@ export const ContainerDiv = styled.div`
   align-items: center;
   position: relative;
   overflow-x: auto;
+
+  & div:nth-child(2) {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+
+    & div {
+      min-width: 100% !important;
+      min-height: 100% !important;
+    }
+  }
+
+  & div:nth-child(3) {
+    z-index: 2;
+    width: 500px;
+    height: 300px;
+    border: 5px solid black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    & div {
+      min-width: 100% !important;
+      min-height: 100% !important;
+    }
+  }
+
+  & div:nth-child(4) {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+
+    & div {
+      min-width: 100% !important;
+      min-height: 100% !important;
+    }
+  }
+`
+
+export const Div = styled.div`
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `
 
 export const ArrowLeftStyle = styled.img`
@@ -25,44 +77,3 @@ export const ArrowRightStyle = styled.img`
   top: 50%;
   transform: translateY(-50%);
 `
-
-export const StyleDivLeft = styled.div`
-  width: 500px;
-  height: 250px;
-  display: flex;
-  overflow: auto;
-  border: 1px solid black;
-  position: absolute;
-  left: 10%;
-`
-
-export const StyleDiv = styled.div`
-  z-index: 2;
-  width: 500px;
-  height: 300px;
-  display: flex;
-  border: 1px solid black;
-  overflow: auto;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-`
-
-export const StyleDivRigth = styled.div`
-  width: 500px;
-  height: 250px;
-  border: 1px solid black;
-  display: flex;
-  position: absolute;
-  right: 10%;
-`
-
-/* ${div} {
-  position: absolute;
-} */
-/* > ${div} {
-  position: absolute;
-} */
-// div: nth - child(n) {
-//   position: absolute;
-// }
