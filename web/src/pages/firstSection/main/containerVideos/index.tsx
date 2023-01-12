@@ -76,6 +76,8 @@ export default function FirstSection() {
     teamsVideos[thirdIndex],
   ]
 
+  const hasUndefined: boolean = threeItems.some((item) => item === undefined)
+
   return (
     <ContainerDiv>
       <ArrowLeftStyle
@@ -84,16 +86,18 @@ export default function FirstSection() {
         onClick={swipeLeft}
       />
 
-      {threeItems.map((items: Video) => {
-        return (
-          <Div
-            key={Math.random()}
-            dangerouslySetInnerHTML={{
-              __html: items.videos[0].embed,
-            }}
-          ></Div>
-        )
-      })}
+      {hasUndefined
+        ? ''
+        : threeItems.map((items: Video) => {
+            return (
+              <Div
+                key={Math.random()}
+                dangerouslySetInnerHTML={{
+                  __html: items.videos[0].embed,
+                }}
+              ></Div>
+            )
+          })}
 
       <ArrowRightStyle
         src={ArrowRight}
