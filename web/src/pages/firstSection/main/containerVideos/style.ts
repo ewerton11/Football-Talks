@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const ContainerDiv = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const ContainerDiv = styled.div`
   overflow-x: auto;
 
   & div:nth-child(2) {
-    width: 500px;
+    width: 400px;
     height: 300px;
     position: absolute;
     top: 50%;
@@ -26,11 +26,12 @@ export const ContainerDiv = styled.div`
   & div:nth-child(3) {
     z-index: 2;
     width: 500px;
-    height: 300px;
+    height: 398px;
     border: 2px solid black;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     & div {
       min-width: 100% !important;
@@ -39,11 +40,11 @@ export const ContainerDiv = styled.div`
   }
 
   & div:nth-child(4) {
-    width: 500px;
-    height: 230px;
+    width: 400px;
+    height: 300px;
     position: absolute;
     top: 50%;
-    right: 15%;
+    right: 10%;
     transform: translateY(-50%);
 
     & div {
