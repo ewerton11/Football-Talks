@@ -4,15 +4,15 @@ import {
   ImgTeamLiNav,
   LiNav,
   ResultNav,
-} from "./style"
+} from './style'
 
-import { api } from "../../../../../lib/axios/axios"
+import { api } from '../../../../../lib/axios/axios'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export function ContainerLi() {
   useEffect(() => {
-    api.get("campeonatos/10/rodadas/38").then((Response) => {
+    api.get('campeonatos/10/rodadas/38').then((Response) => {
       //alterar a rodada dinamico importando rounds
 
       const teamClashes = Response.data.partidas

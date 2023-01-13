@@ -65,6 +65,7 @@ export const ArrowLeftStyle = styled.img`
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 `
 
 export const ArrowRightStyle = styled.img`
@@ -73,4 +74,5 @@ export const ArrowRightStyle = styled.img`
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 `

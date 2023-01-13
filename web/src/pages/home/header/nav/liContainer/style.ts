@@ -1,17 +1,17 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const DivContainerNav = styled.div`
   width: 100%;
   height: 10vh;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid #00000014;
+  border-radius: 5px;
   margin: 2vh 0px;
   display: flex;
   justify-content: space-between;
 `
 
 export const DivLiNav = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
 `
@@ -21,7 +21,7 @@ export const LiNav = styled.li`
   height: 50%;
   display: flex;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 `
 
 export const ImgTeamLiNav = styled.img`

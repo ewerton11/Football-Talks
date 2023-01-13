@@ -14,69 +14,36 @@ interface Video {
 
 export default function FirstSection() {
   const [teamsVideos, setVideos] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    apiVideos.get('').then((Response) => {
-      //alterar a rodada dinamico importando rounds
-
-      const data = Response.data.response
+    apiVideos.get('').then((response) => {
+      const data = response.data.response
       const serieA = data.filter(
-        (ligue: SerieA) => ligue.competition === 'BRASIL: Serie A'
+        (league: SerieA) => league.competition === 'BRASIL: Serie A'
       )
 
-      if (serieA.length === 0) {
-        const allChampions = data.filter((ligue: SerieA) => ligue)
-
-        setVideos(allChampions)
-      } else {
-        setVideos(serieA)
-      }
+      setVideos(serieA.length === 0 ? data : serieA)
     })
   }, [])
 
-  let [firstIndex, setFirstIndex] = useState(0)
-  let [secondIndex, setSecondIndex] = useState(1)
-  let [thirdIndex, setThirdIndex] = useState(2)
-
   function swipeLeft() {
-    if (firstIndex === 0) {
-      setFirstIndex(teamsVideos.length - 1)
-      setSecondIndex(secondIndex - 1)
-      setThirdIndex(thirdIndex - 1)
-    } else if (secondIndex === 0) {
-      setFirstIndex(firstIndex - 1)
-      setSecondIndex(teamsVideos.length - 1)
-      setThirdIndex(thirdIndex - 1)
-    } else if (thirdIndex === 0) {
-      setFirstIndex(firstIndex - 1)
-      setSecondIndex(secondIndex - 1)
-      setThirdIndex(teamsVideos.length - 1)
-    }
+    setCurrentIndex(
+      (currentIndex + teamsVideos.length - 1) % teamsVideos.length
+    )
   }
 
   function swipeRight() {
-    if (firstIndex === teamsVideos.length - 1) {
-      setFirstIndex((firstIndex = 0))
-      setSecondIndex(secondIndex + 1)
-      setThirdIndex(thirdIndex + 1)
-    } else if (secondIndex === teamsVideos.length - 1) {
-      setFirstIndex(firstIndex + 1)
-      setSecondIndex((secondIndex = 0))
-      setThirdIndex(thirdIndex + 1)
-    } else if (thirdIndex === teamsVideos.length - 1) {
-      setFirstIndex(firstIndex + 1)
-      setSecondIndex(secondIndex + 1)
-      setThirdIndex((thirdIndex = 0))
-    }
+    setCurrentIndex((currentIndex + 1) % teamsVideos.length)
   }
 
-  let threeItems = [
-    teamsVideos[firstIndex],
-    teamsVideos[secondIndex],
-    teamsVideos[thirdIndex],
+  const threeItems = [
+    teamsVideos[currentIndex],
+    teamsVideos[(currentIndex + 1) % teamsVideos.length],
+    teamsVideos[(currentIndex + 2) % teamsVideos.length],
   ]
 
-  const hasUndefined: boolean = threeItems.some((item) => item === undefined)
+  const hasUndefined = threeItems.some((item) => item === undefined)
 
   return (
     <ContainerDiv>

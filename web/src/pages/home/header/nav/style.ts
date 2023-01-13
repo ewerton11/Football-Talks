@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const NavStyle = styled.nav`
   z-index: 2;
@@ -20,4 +20,16 @@ export const UlNav = styled.ul`
   height: 95%;
   overflow-y: auto;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+  }
 `
