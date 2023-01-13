@@ -10,7 +10,6 @@ export const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
 `
 
 export const ContainerVideos = styled.div`
