@@ -1,7 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const HeaderStyle = styled.header`
-  z-index: 2;
   width: 100%;
   height: 7vh;
   background-color: white;
@@ -12,5 +11,5 @@ export const HeaderStyle = styled.header`
   align-items: center;
 `
 export const LogoStyle = styled.h1`
-  font-family: "Shadows Into Light", cursive;
+  font-family: 'Shadows Into Light', cursive;
 `

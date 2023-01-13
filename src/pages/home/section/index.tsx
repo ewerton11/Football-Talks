@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
-import { apiVideos } from '../../../../lib/axios/axios'
-import { ArrowLeftStyle, ArrowRightStyle, ContainerDiv, Div } from './style'
-import ArrowLeft from '../../../../assets/arrowLeft.svg'
-import ArrowRight from '../../../../assets/arrowRight.svg'
+
+import { apiVideos } from '../../../lib/axios/axios'
+import ArrowLeft from '../../../assets/arrowLeft.svg'
+import ArrowRight from '../../../assets/arrowRight.svg'
+
+import * as style from './style'
 
 interface SerieA {
   competition: string
@@ -12,7 +14,7 @@ interface Video {
   videos: [{ embed: string }]
 }
 
-export default function FirstSection() {
+export default function Section() {
   const [teamsVideos, setVideos] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -46,31 +48,33 @@ export default function FirstSection() {
   const hasUndefined = threeItems.some((item) => item === undefined)
 
   return (
-    <ContainerDiv>
-      <ArrowLeftStyle
-        src={ArrowLeft}
-        alt="seta para esquerda"
-        onClick={swipeLeft}
-      />
+    <style.Section>
+      <style.ContainerVideos>
+        <style.ArrowLeftStyle
+          src={ArrowLeft}
+          alt="seta para esquerda"
+          onClick={swipeLeft}
+        />
 
-      {hasUndefined
-        ? ''
-        : threeItems.map((items: Video) => {
-            return (
-              <Div
-                key={Math.random()}
-                dangerouslySetInnerHTML={{
-                  __html: items.videos[0].embed,
-                }}
-              ></Div>
-            )
-          })}
+        {hasUndefined
+          ? ''
+          : threeItems.map((items: Video) => {
+              return (
+                <style.Div
+                  key={Math.random()}
+                  dangerouslySetInnerHTML={{
+                    __html: items.videos[0].embed,
+                  }}
+                ></style.Div>
+              )
+            })}
 
-      <ArrowRightStyle
-        src={ArrowRight}
-        alt="seta para direita"
-        onClick={swipeRight}
-      />
-    </ContainerDiv>
+        <style.ArrowRightStyle
+          src={ArrowRight}
+          alt="seta para direita"
+          onClick={swipeRight}
+        />
+      </style.ContainerVideos>
+    </style.Section>
   )
 }
