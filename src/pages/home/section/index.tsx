@@ -56,18 +56,20 @@ export default function Section() {
           onClick={swipeLeft}
         />
 
-        {hasUndefined
-          ? ''
-          : threeItems.map((items: Video) => {
-              return (
-                <style.Div
-                  key={Math.random()}
-                  dangerouslySetInnerHTML={{
-                    __html: items.videos[0].embed,
-                  }}
-                ></style.Div>
-              )
-            })}
+        {hasUndefined ? (
+          <style.h1Loading>Carreagando...</style.h1Loading>
+        ) : (
+          threeItems.map((items: Video) => {
+            return (
+              <style.Div
+                key={Math.random()}
+                dangerouslySetInnerHTML={{
+                  __html: items.videos[0].embed,
+                }}
+              ></style.Div>
+            )
+          })
+        )}
 
         <style.ArrowRightStyle
           src={ArrowRight}

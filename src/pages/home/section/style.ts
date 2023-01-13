@@ -69,6 +69,14 @@ export const Div = styled.div`
   height: 400px;
 `
 
+export const h1Loading = styled.h1`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const ArrowLeftStyle = styled.img`
   width: 50px;
   background-color: white;
