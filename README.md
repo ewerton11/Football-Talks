@@ -7,7 +7,7 @@ if the championship is completed, it will show highlights of all soccer matches 
 
 ## layout
 
-![alt text](https://github.com/ewerton11/assets/blob/main/best-Moments-Football/best-moments-football-home.png)
+![alt text](https://github.com/ewerton11/best-moments-soccer/blob/main/src/assets/layoutGitHub/best-moments-soccer.png)
 
 # technology used
 
