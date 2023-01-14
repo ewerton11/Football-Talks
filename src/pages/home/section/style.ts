@@ -22,8 +22,8 @@ export const ContainerVideos = styled.div`
   overflow-x: auto;
 
   & div:nth-child(2) {
-    width: 400px;
-    height: 300px;
+    width: 30vw;
+    height: 45vh;
     position: absolute;
     top: 50%;
     left: 10%;
@@ -36,8 +36,8 @@ export const ContainerVideos = styled.div`
 
   & div:nth-child(3) {
     z-index: 2;
-    width: 500px;
-    height: 398px;
+    width: 35vw;
+    height: 55vh;
     border: 2px solid black;
     position: absolute;
     top: 50%;
@@ -50,8 +50,8 @@ export const ContainerVideos = styled.div`
   }
 
   & div:nth-child(4) {
-    width: 400px;
-    height: 300px;
+    width: 30vw;
+    height: 45vh;
     position: absolute;
     top: 50%;
     right: 10%;
@@ -77,7 +77,7 @@ export const h1Loading = styled.h1`
 `
 
 export const ArrowLeftStyle = styled.img`
-  width: 50px;
+  width: 3vw;
   background-color: white;
   border-radius: 50%;
   position: absolute;
@@ -93,7 +93,7 @@ export const ArrowLeftStyle = styled.img`
 `
 
 export const ArrowRightStyle = styled.img`
-  width: 50px;
+  width: 3vw;
   background-color: white;
   border-radius: 50%;
   position: absolute;

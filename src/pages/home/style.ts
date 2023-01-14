@@ -53,10 +53,12 @@ export const ContainerTeams = styled.div`
 export const Confrontation = styled.div`
   width: 100%;
   height: 10vh;
+  position: relative;
   border: 1px solid #00000014;
   border-radius: 5px;
   margin: 2vh 0px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `
 
@@ -65,6 +67,7 @@ export const Teams = styled.div`
   height: 50%;
   display: flex;
   align-items: center;
+  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
 `
 
@@ -75,6 +78,7 @@ export const ImgTeams = styled.img`
 `
 
 export const Results = styled.p`
-  margin-left: auto;
+  position: absolute;
+  right: 2vw;
   color: rgb(79, 78, 78);
 `
